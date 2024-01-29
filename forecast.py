@@ -67,7 +67,7 @@ train_end_date_date = train_end_date.date()
 predict_date_date = predict_date.date()
 
 #library, change to file path where .csv files located
-path = 'C:/Users/groutgauss/Machine_Learning_Projects/CAISO Price Forecast/Machine Learning/'
+path = 'C:/Users/~/~/'
 
 merged_df = pd.read_csv(path + 'data.csv')
 
