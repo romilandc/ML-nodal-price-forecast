@@ -127,7 +127,23 @@ for model_name, forecasts in hourly_forecasts.items():
 # Add plot elements
 plt.title("Model Predictions vs. Actual Load")
 plt.xlabel("Hour")
-plt.ylabel("Load")
+plt.ylabel("Price ($/MWh)")
 plt.legend(loc="upper left")
+
+# Format y-axis ticks as currency
+plt.gca().yaxis.set_major_formatter(mtick.FormatStrFormatter('$%.0f'))
+
+# Display predicted date
+predicted_date_str = pd.to_datetime(predict_date_date).strftime("%Y-%m-%d")
+plt.text(
+    0.95,  # X-position adjusted for right alignment
+    0.95,  # Y-position adjusted for above the plot
+    f"Predicted Date: {predicted_date_str}",
+    ha="right",
+    va="top",
+    transform=plt.gcf().transFigure,
+    fontsize=10,
+    bbox=dict(facecolor='none', edgecolor='black', pad=10.0),
+)
 
 plt.show()
