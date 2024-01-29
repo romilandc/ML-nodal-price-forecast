@@ -1,11 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 from models import train_model
 from preprocess import rename_columns, swap_missing_data, interpolate_missing, split_data, date_and_hour, calculate_mape, add_holiday_variable
-from sklearn.preprocessing import StandardScaler 
-#from datetime import datetime
 
 # Initialize models
 models = ["LinearModel", "XGBoostModel", "rfModel"]
